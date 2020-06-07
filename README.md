@@ -137,7 +137,7 @@ The optimization method is chosen to be Adam with  learning rate scheduling. Aft
 where η_min and η_max are ranges for the learning rate, T_cur accounts for how many epochs have been performed since the last restart.
 
 ## Results
-IoU scores:
+### IoU scores for Convolutional models:
 
 ![128x128](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/128x128.png?raw=true)
 <center> Table 1. Results for low-resolution 128x128 images  </center>
@@ -157,13 +157,13 @@ IoU scores:
 
 
 ## Predictions obtained with U-Net + efficientnetb4 backbone
-
-![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex1.jpg?raw=true)
 ![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg?raw=true)
-![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex3.jpg?raw=true)
 ![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg?raw=true)
 
 <center> Figure 3. U-Net + efficientnetb4 backbone prediction for 5 classes case </center>
+
+### IoU scores for GAN:
+
 
 
 ## Future work
