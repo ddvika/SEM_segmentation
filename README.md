@@ -143,10 +143,9 @@ IoU scores:
 <center> Table 1. Results for low-resolution 128x128 images  </center>
 
 ![256x256](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/256x256.png?raw=true)
-
 <center> Table 2. Results for low-resolution 256x256 images </center>
-![512x512](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/512x512.png?raw=true)
 
+![512x512](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/512x512.png?raw=true)
 <center> Table 3. Results for high-resolution 512x512 images </center>
 
 
