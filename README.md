@@ -104,7 +104,7 @@ The following schematically structure of U-Net was used:
 Due to the imbalance factor and specification of the task, it was decided to use combination of region-based and distribution-based losses like: Dice and Focal  loss functions.   Dice loss directly optimize the Dice coefficient which is the most commonly used segmentation evaluation metric, while Focal loss adapts the standard Cross Entropy to deal with extreme foreground-background class imbalance, where the weights of well-classified examples are reduced. Class weights were also assigned into Dice loss. The total final loss is presented by:
 
 
-<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/loss.png" width="300" >
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/loss.png" width="200" >
 
 where DL is Dice Loss, FL - Focal Loss, and c - constant value.
 
