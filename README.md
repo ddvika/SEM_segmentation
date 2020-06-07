@@ -129,9 +129,9 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 
 ### Predictions obtained with U-Net + efficientnetb4 backbone
 
-<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg" width="800" >
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg" width="1000" >
 
-<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg" width="800" >
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg" width="1000" >
 
 <center> Figure 5. U-Net + efficientnetb4 backbone prediction for 5 classes case </center>
 
@@ -143,7 +143,7 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 
 ### Predictions obtained with GAN
 
-<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex_gan.png" width="800" >
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex_gan.png" width="1000" >
 
 <center> Figure 6. GAN prediction for 5 classes case </center>
 
