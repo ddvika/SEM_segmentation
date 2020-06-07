@@ -106,9 +106,15 @@ The following schematically structure of U-Net were used:
 #### Training details 
 Due to the imbalance factor and specification of the task, it was decided to use combination of region-based and distribution-based losses like: Dice and Focal  loss functions.   Dice loss directly optimize the Dice coefficient which is the most commonly used segmentation evaluation metric, while Focal loss adapts the standard Cross Entropy to deal with extreme foreground-background class imbalance, where the weights of well-classified examples are reduced. Class weights were also assigned into Dice loss. The total final loss is presented by:
 
- </center> *TL = DL* (c*FL)  </center>
+![Loss](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/loss.png?raw=true)
 
-, where DL is Dice Loss, FL - Focal Loss, and c - constant value.
+where DL is Dice Loss, FL - Focal Loss, and c - constant value.
+
+The optimization method is chosen to be Adam with  learning rate scheduling. After the i-th run, learning rate is reduced with a cosine annealing for each batch as follows:
+
+![Cosine_lr](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/cosine_lr.png?raw=true)
+
+where η_min and η_max are ranges for the learning rate, T_cur accounts for how many epochs have been performed since the last restart.
 
 ## Results
 
