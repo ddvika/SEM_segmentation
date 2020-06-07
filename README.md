@@ -105,7 +105,7 @@ Due to the imbalance factor and specification of the task, it was decided to use
 
 ![Loss](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/loss.png?raw=true)
 
-<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/loss.png" width="20">
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/loss.png" width="200">
 
 where DL is Dice Loss, FL - Focal Loss, and c - constant value.
 
