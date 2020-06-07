@@ -139,7 +139,7 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 
 <img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/gan_512x512.png" width="500" >
 
-<center> Table 4. Results for high-resolution 512x512 images </center>
+<center> Table 4. Results for high-resolution 800x800 images </center>
 
 ### Predictions obtained with GAN
 
