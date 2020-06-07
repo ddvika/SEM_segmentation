@@ -63,43 +63,12 @@ The following schematically structure of U-Net were used:
 * zoom range: from 80% to 120%
 
 
-## 1.2 Prediction obtained with U-Net
+## 1.2 Prediction obtained with U-Net + efficientnetb4 backbone
 
-![UNetResults](https://i.imgur.com/oAPvMSG.png)
+![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex1.jpg?raw=true)
 
-<center> Figure 3. U-Net prediction on one of the classes </center>
+<center> Figure 3. U-Net  + efficientnetb4 backbone prediction for 5 classes case </center>
 
-## 2.1 SegNet
-The following structure of SegNet were used:
-
-![SegNet](https://www.whirldatascience.com/wp-content/uploads/2019/04/seg-fig-4.png)
-
-<center> Figure 2. SegNet architecture </center>
-
-(Img source: https://www.whirldatascience.com/2019/03/27/segnet-applicability-in-single-object-detection-with-low-resolution-images/ )
-
-#### SegNet description:
-
-* 16 initial convolutional filters
-* Batch-normalization after every convolutional layer
-* Activation function: ReLU
-* Maxpooling 2×2
-* UpSampling 2×2
-* Without Dropout
-* 493585 total trainable parameters
-* 496273 total parameters
-
-
-#### Data augmentation description:
-* range of angles: from -15 to 15 degrees
-* width shift range: 0.05 % in both directions
-* height shift range: 0.05 % in both directions
-
-## 2.2 Prediction obtained with SegNet
-
-![SegNetResults](https://i.imgur.com/EdlZEEd.png)
-
-<center> Figure 3. SegNet prediction on one of the classes </center>
 
 
 #### Training details 
