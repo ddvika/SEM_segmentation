@@ -3,7 +3,7 @@
 
 > This repository contains machine learning models written for the final project of the Skoltech Machine Learning course
 
->Tags: ResNet, UNet, Linknet, ResUnet, inceptionv3, inceptionresnetv2, vgg16, vgg19, resnet18, efficientnetb3, efficientnetb4, backbone, DigitalRock, Rock, Pore, Segmentation, Neural Network, Deep Learning, Deep, Learning, grains, SEM, QEMSCAN, Segmentation Neural Network, Tensorflow, Keras, CNN, Convolutional Neural Network, GAN, Generative adversarial network
+>Tags: UNet, Linknet, ResUnet, inceptionv3, inceptionresnetv2, vgg16, vgg19, resnet18, efficientnetb3, efficientnetb4, backbone, DigitalRock, Rock, Pore, Segmentation, Neural Network, Deep Learning, Deep, Learning, grains, SEM, QEMSCAN, Segmentation Neural Network, Tensorflow, Keras, CNN, Convolutional Neural Network, GAN, Generative adversarial network
 ### Implemented by: 
 * Vladislav Alekseev
 * Victoria Dochkina
