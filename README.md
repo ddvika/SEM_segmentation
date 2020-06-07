@@ -66,8 +66,8 @@ The following schematically structure of U-Net were used:
 * Activation function: ReLU
 * Maxpooling 2×2
 * Dropout with rate 15%
-* > 29M total trainable parameters
-* > 29M total parameters
+* More than 29M total trainable parameters
+* More than 29M total parameters
 
 
 #### Data augmentation description:
@@ -89,23 +89,32 @@ The following schematically structure of U-Net were used:
 
 <center> Figure 3. U-Net  + efficientnetb4 backbone prediction for 5 classes case </center>
 
+## 1.1 Linknet
+
+![Linknet](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/Linknet.png?raw=true)
+
+<center> Figure 3. Linknet architecture </center>
+
+## 1.1 ResUnet
+
+![ResUnet](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ResUnet.png?raw=true)
+
+<center> Figure 4. ResUnet architecture </center>
+
 
 
 #### Training details 
-Due to the imbalance factor and specification of the task, it was decided to use combination of region-based and distribution-based losses like: Dice \eqref{Dice} and Focal \eqref{Focal} loss functions.   Dice loss directly optimize the Dice coefficient which is the most commonly used segmentation evaluation metric, while Focal loss adapts the standard Cross Entropy to deal with extreme foreground-background class imbalance, where the weights of well-classified examples are reduced. Class weights were also assigned into Dice loss. The total final loss is presented by:
+Due to the imbalance factor and specification of the task, it was decided to use combination of region-based and distribution-based losses like: Dice and Focal  loss functions.   Dice loss directly optimize the Dice coefficient which is the most commonly used segmentation evaluation metric, while Focal loss adapts the standard Cross Entropy to deal with extreme foreground-background class imbalance, where the weights of well-classified examples are reduced. Class weights were also assigned into Dice loss. The total final loss is presented by:
 
-$$
-\mathrm{TL}=\mathrm{DL}+(c \cdot \mathrm{FL})
-$$
+ </center> *TL = DL* (c*FL)  </center>
+
 , where DL is Dice Loss, FL - Focal Loss, and c - constant value.
 
 ## Results
 
 * We have identified several problems related to dataset: class imbalance, image-mask inconsistencies and addressed them in preprocessing
 
-* We have tested U-Net and SegNet models for image segmentations in several configurations: with original images and with fixed images.  SegNet showed bad prediction resolution.
-
-* We have found that U-Net performed better on thisdata,  possibly due to special architecture decision-skip connections.
+* We have tested U-Net, Linknet and ResUnet models for image segmentations in several configurations listed in **Experiment** part.
 
 
 ## Future work
