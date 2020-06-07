@@ -10,8 +10,10 @@
 * Daniil Bragin
 * Emre Özdemir
 
-## Annotation
-Segmentation of images of rocks is a crucial step in almost any Digital Rock workflow. However,established segmentation methods introduce human bias. In this paper, we investigate an application of two popular convolutional neural networks(CNN) architectures: SegNet and U-Net for segmentation of 2D microtomographic rock images. Our dataset contains eight pairs of images. 2D images of rock surface obtained by scanning electronmicroscopy (SEM) are used as input for segmentation. Manually modified QEMSCAN images reused as a ground truth labels.
+## Brief description of the project
+Segmentation of images of rocks is a crucial step in almost any Digital Rock workflow. However, the QEMSCAN scanning method is a very time and money consuming approach. In this paper, we investigate an application of three popular Convolutional Neural Networks
+(CNN) architectures: U-Net, LinkNet, ResUNet. We also applied the pix2pix - conditional Generative Adversarial Network (cGAN) for the segmentation of 2D microtomographic rock images.
+Our dataset contains nine pairs of images. 2D images of rock surface obtained by scanning electron microscopy (SEM) and in one case QEMSCAN grayscale images are used as input for segmentation. Manually modified QEMSCAN images with mineral labels are used as ground truth labels. We have succeeded in building proper workflow, starting from image preprocessing and ending with inferencing the model results. We have found that U-Net (backbones: inceptionv3, efficientnetb4, inceptionresnetv2) and LinkNet (backbone: inceptionv3) performed better on this data.
 
 ## Dataset description
 To test the performance of segmentation algorithms for the purpose of Multi-Mineral Segmentation, we use images of sandstone samples obtained separately by SEM and QEMSCAN. Initial SEM data is 9 high-resolution images(88000×87000). QEMSCAN data is 9 colored low-resolution images of the same samples with each color associated with a mineral component or pore space (4700×4700 pixels). For the dataset we converted color-coded images to greyscale-coded images (classes coded with equidistant numbers from 0 to 255).
