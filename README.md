@@ -3,13 +3,12 @@
 
 > This repository contains machine learning models written for the final project of the Skoltech Machine Learning course
 
->Tags: SegNet, UNet, DigitalRock, Rock, Pore, Segmentation, Neural Network, Deep Learning, Deep, Learning, grains, SEM, QEMSCAN, Segmentation Neural Network, Tensorflow, Keras, CNN, Convolutional Neural Network
+>Tags: ResNet, UNet, Linknet, ResUnet, inceptionv3, inceptionresnetv2, vgg16, vgg19, resnet18, efficientnetb3, efficientnetb4, backbone, DigitalRock, Rock, Pore, Segmentation, Neural Network, Deep Learning, Deep, Learning, grains, SEM, QEMSCAN, Segmentation Neural Network, Tensorflow, Keras, CNN, Convolutional Neural Network
 ### Implemented by: 
 * Vladislav Alekseev
 * Victoria Dochkina
 * Daniil Bragin
-* Margarita Sharkova 
-* Marsel Ishimbaev
+* Emre Özdemir
 
 ## Annotation
 Segmentation of images of rocks is a crucial step in almost any Digital Rock workflow. However,established segmentation methods introduce human bias. In this paper, we investigate an application of two popular convolutional neural networks(CNN) architectures: SegNet and U-Net for segmentation of 2D microtomographic rock images. Our dataset contains eight pairs of images. 2D images of rock surface obtained by scanning electronmicroscopy (SEM) are used as input for segmentation. Manually modified QEMSCAN images reused as a ground truth labels.
