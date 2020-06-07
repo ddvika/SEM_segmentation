@@ -45,7 +45,9 @@ The following schematically structure of U-Net were used:
 
 
 #### U-Net description:
-* 16 initial convolutional filters and doubling with every layer in encoder to 256
+* Unet-like architecture with one of the following backbone:
+**1
+**2
 * Batch-normalization after every convolutional layer
 * Activation function: ReLU
 * Maxpooling 2×2
@@ -65,6 +67,9 @@ The following schematically structure of U-Net were used:
 ## 1.2 Prediction obtained with U-Net + efficientnetb4 backbone
 
 ![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex1.jpg?raw=true)
+![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg?raw=true)
+![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex3.jpg?raw=true)
+![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg?raw=true)
 
 <center> Figure 3. U-Net  + efficientnetb4 backbone prediction for 5 classes case </center>
 
