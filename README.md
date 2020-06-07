@@ -149,13 +149,6 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 <center> Table 3. Results for high-resolution 512x512 images </center>
 
 
-
-
-* We have identified several problems related to dataset: class imbalance, image-mask inconsistencies and addressed them in preprocessing
-
-* We have tested U-Net, Linknet and ResUnet models for image segmentations in several configurations listed in **Experiment** part.
-
-
 ## Predictions obtained with U-Net + efficientnetb4 backbone
 ![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg?raw=true)
 ![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg?raw=true)
@@ -164,17 +157,15 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 
 ### IoU scores for GAN:
 
+![GANResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/gan_512x512.png?raw=true)
+<center> Figure 3. GAN prediction for 5 classes case </center>
 
+## Conclusion
 
-## Future work
+* We have identified several problems related to dataset: class imbalance, image-mask inconsistencies and addressed them in preprocessing
 
-* After analyzing results we are planning to combine albite and quartz (the second and the third classes) because the texture is lost due to extreme compression,the original image was compressed more than 18 times,because we adapted the resolution of the image to theoutput QEMSCAN labels resolution.
+* We have tested U-Net, Linknet and ResUnet models for image segmentations in several configurations listed in **Experiment** part. Also, we have implemented pix2pix segmentation with GAN model.
 
-* To increase a generalization capability, it is necessary to do data augmentation taking into account physical principles of image forming: model of noise, typical artefacts, parameters of reconstruction procedure, etc.
-
-* To find a reasonable trade-off between the amount ofdata and time for model training
-
-* To perform post-processing of the output of neural network can eliminate some abnormalities, for example, unconnected fragments of solids and overlapping fragments
 
 ## Installation
 
