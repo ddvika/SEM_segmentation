@@ -15,6 +15,19 @@ Segmentation of images of rocks is a crucial step in almost any Digital Rock wor
 (CNN) architectures: U-Net, LinkNet, ResUNet. We also applied the pix2pix - conditional Generative Adversarial Network (cGAN) for the segmentation of 2D microtomographic rock images.
 Our dataset contains nine pairs of images. 2D images of rock surface obtained by scanning electron microscopy (SEM) and in one case QEMSCAN grayscale images are used as input for segmentation. Manually modified QEMSCAN images with mineral labels are used as ground truth labels. We have succeeded in building proper workflow, starting from image preprocessing and ending with inferencing the model results. We have found that U-Net (backbones: inceptionv3, efficientnetb4, inceptionresnetv2) and LinkNet (backbone: inceptionv3) performed better on this data.
 
+
+## Guideline
+
+in "lib" folder you can find all the necessary metrics, plot functions and defined models in "custom_unet" and "custom_segnet" .py files;
+
+in "preprocessing" you can find all notebooks, connected with data processing and fixing pattern error in the QEMSCAN dataset;
+
+"CNN_Segmentation_SEM.ipynb" - main notebook, reproducable in Google Colaboratory;
+
+in "GAN" folder you can find Generative Adversarial Network implementation of segmentation model.
+
+The Dataset is commercial, so it is not provided with the script.Though code is reproducable for any other dataset.
+
 ## Dataset description
 To test the performance of segmentation algorithms for the purpose of Multi-Mineral Segmentation, we use images of sandstone samples obtained separately by SEM and QEMSCAN. Initial SEM data is 9 high-resolution images(88000×87000). QEMSCAN data is 9 colored low-resolution images of the same samples with each color associated with a mineral component or pore space (4700×4700 pixels). For the dataset we converted color-coded images to greyscale-coded images (classes coded with equidistant numbers from 0 to 255).
 The total number of classes is 23 including pore/background category. Based on the fact that SEM doesn’t distinguish between several frequently occurring minerals we decided to combine all classes to 4:  Pores (0) Quartz (1),  Albite (2),  mixed group including mostly clays and accessory minerals (3).
@@ -155,24 +168,12 @@ IoU scores:
 
 #### Requirements:
 
-* python 3
+* python >= 3.6
 * matplotlib >= 3.1.1
 * keras >= 2.2.0 or tensorflow >= 1.14
 * setuptools >= 41.0.1
-* numpy >=1.16
+* numpy >= 1.16
 
-
-## Comments
-
-
-in "lib" folder you can find all the necessary metrics, plot functions and defined models in "custom_unet" and "custom_segnet" .py files.
-
-in "pre-processing" you can find all notebooks, connected with data processing and fixing pattern error in the QEMSCAN dataset
-
-"SEM_Images_segmentation.ipynb" - main notebook, reproducable in Google Colaboratory.
-
-
-The Dataset is commercial, so it is not provided with the script.Though code is reproducable for any other dataset.
 
 
 ```
