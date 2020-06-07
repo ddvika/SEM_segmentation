@@ -164,7 +164,7 @@ IoU scores:
 ![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex3.jpg?raw=true)
 ![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg?raw=true)
 
-<center> Figure 3. U-Net  + efficientnetb4 backbone prediction for 5 classes case </center>
+<center> Figure 3. U-Net + efficientnetb4 backbone prediction for 5 classes case </center>
 
 
 ## Future work
