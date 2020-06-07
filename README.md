@@ -18,7 +18,7 @@ Our dataset contains nine pairs of images. 2D images of rock surface obtained by
 
 ## Guideline
 
-in "lib" folder you can find all the necessary metrics, plot functions and defined models in "custom_unet" and "custom_segnet" .py files;
+in "lib" folder you can find all the necessary metrics, plot functions and defined models in "custom_modelname" .py files;
 
 in "preprocessing" you can find all notebooks, connected with data processing and fixing pattern error in the QEMSCAN dataset;
 
