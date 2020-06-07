@@ -83,16 +83,6 @@ The following schematically structure of U-Net was used:
 ![UNet](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/Unet.png?raw=true)
 
 <center> Figure 2. U-Net architecture </center>
- 
-
-#### U-Net description:
-* Unet-like architecture with one of the backbones listed in **Backbones**:
-* Batch-normalization after every convolutional layer
-* Activation function: ReLU
-* Maxpooling 2×2
-* Dropout with rate 15%
-* More than 29M total trainable parameters
-* More than 29M total parameters
 
 
 ## 1.1 Linknet
@@ -101,13 +91,6 @@ The following schematically structure of U-Net was used:
 
 <center> Figure 3. Linknet architecture </center>
 
-#### Linknet description:
-* Linknet-like architecture with one of the backbones listed in **Backbones**:
-* Batch-normalization after every convolutional layer
-* Activation function: ReLU
-* Dropout with rate 15%
-* More than 12M total trainable parameters
-* More than 12M total parameters
 
 ## 1.1 ResUnet
 
@@ -115,13 +98,7 @@ The following schematically structure of U-Net was used:
 
 <center> Figure 4. ResUnet architecture </center>
 
-#### Linknet description:
-* NO **Backbones**:
-* Batch-normalization after every convolutional layer
-* Activation function: ReLU
-* Dropout with rate 15%
-* More than 5M total trainable parameters
-* More than 5M total parameters
+
 
 #### Training details 
 Due to the imbalance factor and specification of the task, it was decided to use combination of region-based and distribution-based losses like: Dice and Focal  loss functions.   Dice loss directly optimize the Dice coefficient which is the most commonly used segmentation evaluation metric, while Focal loss adapts the standard Cross Entropy to deal with extreme foreground-background class imbalance, where the weights of well-classified examples are reduced. Class weights were also assigned into Dice loss. The total final loss is presented by:
@@ -149,7 +126,7 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 <center> Table 3. Results for high-resolution 512x512 images </center>
 
 
-## Predictions obtained with U-Net + efficientnetb4 backbone
+### Predictions obtained with U-Net + efficientnetb4 backbone
 ![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg?raw=true)
 ![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg?raw=true)
 
@@ -158,6 +135,11 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 ### IoU scores for GAN:
 
 ![GANResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/gan_512x512.png?raw=true)
+<center> Table 4. Results for high-resolution 512x512 images </center>
+
+### Predictions obtained with GAN
+
+![GANResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex_gan.png?raw=true)
 <center> Figure 3. GAN prediction for 5 classes case </center>
 
 ## Conclusion
