@@ -128,20 +128,24 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 
 
 ### Predictions obtained with U-Net + efficientnetb4 backbone
-![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg?raw=true)
-![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg?raw=true)
 
-<center> Figure 3. U-Net + efficientnetb4 backbone prediction for 5 classes case </center>
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg" width="500" >
+
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg" width="500" >
+
+<center> Figure 5. U-Net + efficientnetb4 backbone prediction for 5 classes case </center>
 
 ### IoU scores for GAN:
 
-![GANResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/gan_512x512.png?raw=true)
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/gan_512x512.png" width="500" >
+
 <center> Table 4. Results for high-resolution 512x512 images </center>
 
 ### Predictions obtained with GAN
 
-![GANResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex_gan.png?raw=true)
-<center> Figure 3. GAN prediction for 5 classes case </center>
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex_gan.png" width="500" >
+
+<center> Figure 6. GAN prediction for 5 classes case </center>
 
 ## Conclusion
 
