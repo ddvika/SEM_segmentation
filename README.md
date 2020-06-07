@@ -105,11 +105,13 @@ Due to the imbalance factor and specification of the task, it was decided to use
 
 ![Loss](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/loss.png?raw=true)
 
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/loss.png" width="20">
+
 where DL is Dice Loss, FL - Focal Loss, and c - constant value.
 
 The optimization method is chosen to be Adam with  learning rate scheduling. After the i-th run, learning rate is reduced with a cosine annealing for each batch as follows:
 
-![Cosine_lr](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/cosine_lr.png?raw=true){:height="50px" width="10px"}
+![Cosine_lr](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/cosine_lr.png?raw=true)
 
 where η_min and η_max are ranges for the learning rate, T_cur accounts for how many epochs have been performed since the last restart.
 
