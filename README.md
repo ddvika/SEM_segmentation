@@ -30,7 +30,8 @@ Both the SEM and QEMSCAN images were received from a company as a part of commer
 
 1) Image preprocessing and identifying problems with initial data
 2) Identifying and addressed class imbalances in several independent ways
-3) Trained 2 high-accuracy CNN-based models for image segmentation: U-Net and SegNet
+3) Trained 3 differen convolution segmentation models with additional approaches: U-net and Linknet + backbones, ResUnet
+4) Have tested GAN for image segmentation
 
 ## Experiment
 In the experiment part training of the models listed in  tables in **Results** section was performed. Three different approaches to the training of each of the models were tested:
@@ -52,8 +53,17 @@ Results of the best approach for each of the models are presented in tables in *
  * efficientnetb3
  * efficientnetb4
 
+## Data augmentation description:
+* range of angles: from -15 to 15 degrees
+* width shift range: 0.05 % in both directions
+* height shift range: 0.05 % in both directions
+* shear range: 50 degrees
+* zoom range: 30%
+* horizontal flipping
+* vertical flipping
+
 ## 1.1 U-Net
-The following schematically structure of U-Net were used:
+The following schematically structure of U-Net was used:
 
 ![UNet](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/Unet.png?raw=true)
 
@@ -70,30 +80,19 @@ The following schematically structure of U-Net were used:
 * More than 29M total parameters
 
 
-#### Data augmentation description:
-* range of angles: from -15 to 15 degrees
-* width shift range: 0.05 % in both directions
-* height shift range: 0.05 % in both directions
-* shear range: 50 degrees
-* zoom range: 30%
-* horizontal flipping
-* vertical flipping
-
-
-## 1.2 Prediction obtained with U-Net + efficientnetb4 backbone
-
-![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex1.jpg?raw=true)
-![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg?raw=true)
-![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex3.jpg?raw=true)
-![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg?raw=true)
-
-<center> Figure 3. U-Net  + efficientnetb4 backbone prediction for 5 classes case </center>
-
 ## 1.1 Linknet
 
 ![Linknet](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/Linknet.png?raw=true)
 
 <center> Figure 3. Linknet architecture </center>
+
+#### Linknet description:
+* Linknet-like architecture with one of the backbones listed in **Backbones**:
+* Batch-normalization after every convolutional layer
+* Activation function: ReLU
+* Dropout with rate 15%
+* More than 12M total trainable parameters
+* More than 12M total parameters
 
 ## 1.1 ResUnet
 
@@ -101,7 +100,13 @@ The following schematically structure of U-Net were used:
 
 <center> Figure 4. ResUnet architecture </center>
 
-
+#### Linknet description:
+* NO **Backbones**:
+* Batch-normalization after every convolutional layer
+* Activation function: ReLU
+* Dropout with rate 15%
+* More than 5M total trainable parameters
+* More than 5M total parameters
 
 #### Training details 
 Due to the imbalance factor and specification of the task, it was decided to use combination of region-based and distribution-based losses like: Dice and Focal  loss functions.   Dice loss directly optimize the Dice coefficient which is the most commonly used segmentation evaluation metric, while Focal loss adapts the standard Cross Entropy to deal with extreme foreground-background class imbalance, where the weights of well-classified examples are reduced. Class weights were also assigned into Dice loss. The total final loss is presented by:
@@ -121,6 +126,16 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 * We have identified several problems related to dataset: class imbalance, image-mask inconsistencies and addressed them in preprocessing
 
 * We have tested U-Net, Linknet and ResUnet models for image segmentations in several configurations listed in **Experiment** part.
+
+
+## Predictions obtained with U-Net + efficientnetb4 backbone
+
+![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex1.jpg?raw=true)
+![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg?raw=true)
+![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex3.jpg?raw=true)
+![UNetResults](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg?raw=true)
+
+<center> Figure 3. U-Net  + efficientnetb4 backbone prediction for 5 classes case </center>
 
 
 ## Future work
