@@ -32,8 +32,8 @@ Both the SEM and QEMSCAN images were received from a company as a part of commer
 
 1) Image preprocessing and identifying problems with initial data
 2) Identifying and addressed class imbalances in several independent ways
-3) Trained 3 differen convolution segmentation models with additional approaches: U-net and Linknet + backbones, ResUnet
-4) Have tested GAN for image segmentation
+3) Training 3 different convolution segmentation models with additional approaches: U-net and Linknet + backbones, ResUnet
+4) Training GAN for image segmentation
 
 ## Experiment
 In the experiment part training of the models listed in  tables in **Results** section was performed. Three different approaches to the training of each of the models were tested:
@@ -124,6 +124,7 @@ The optimization method is chosen to be Adam with  learning rate scheduling. Aft
 where η_min and η_max are ranges for the learning rate, T_cur accounts for how many epochs have been performed since the last restart.
 
 ## Results
+IoU scores:
 
 * We have identified several problems related to dataset: class imbalance, image-mask inconsistencies and addressed them in preprocessing
 
