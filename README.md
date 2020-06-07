@@ -1,7 +1,7 @@
 
 # 2D Multi-Mineral Segmentation of Rock SEM Images using Convolutional Neural Networks and Generative Adversarial Network
 
-> This repository contains machine learning models written for the final project of the Skoltech Machine Learning course
+> This repository contains machine learning models written for the final project of the Skoltech Deep Learning course
 
 >Tags: UNet, Linknet, ResUnet, inceptionv3, inceptionresnetv2, vgg16, vgg19, resnet18, efficientnetb3, efficientnetb4, backbone, DigitalRock, Rock, Pore, Segmentation, Neural Network, Deep Learning, Deep, Learning, grains, SEM, QEMSCAN, Segmentation Neural Network, Tensorflow, Keras, CNN, Convolutional Neural Network, GAN, Generative adversarial network
 ### Implemented by: 
