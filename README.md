@@ -33,27 +33,41 @@ Both the SEM and QEMSCAN images were received from a company as a part of commer
 3) Trained 2 high-accuracy CNN-based models for image segmentation: U-Net and SegNet
 
 ## Experiment
-After careful consideration of the original images we found periodic shifts on a QEMSCAN image diagnosed by broken contours of the grains and duplicated rows and columns of pixels.  As a consequence, all crops from the original QEMSCAN images for training and inference suffered from the slight shifts (3-5 pixels in one line depending on the direction) from the input.
-By the sight of it this was caused by wrong merging of sub-images (patches) – essentially an error of the device and appeared through no fault of our own. All patches were merged using thesame algorithm, so all original labeled images have the same error that can potentially be fixed manually. After this discovery we’ve found recurring error pattern inall images and eliminated it by removing duplicating rowsand columns (60 pixels in vertical axes, and 36 pixels inhorizontal direction). Then we expanded images to restorethe  size.   We  applied  this  algorithm  for  all  QEMSCAN images and got new ground truth images.
+In the experiment part training of the models listed in  tables in **Results** section was performed. Three different approaches to the training of each of the models were tested:
+
+1. For all the backbones use weights trained on 2012 ILSVRC ImageNet dataset and train the whole model.
+2. For all the backbones use weights trained on 2012 ILSVRC ImageNet dataset and freeze the encoder part in order to train only randomly initialized decoder and not to change weights of trained encoder with huge gradients during first steps of training. 
+3. Randomly initialize encoder and decoder weights.
+
+Results of the best approach for each of the models are presented in tables in **Results** section.
+
+## Backbones
+
+ One of the following backbones was used in the encoding part for U-Net and Linknet models:
+ * inceptionv3
+ * inceptionresnetv2
+ * resnet18
+ * vgg16
+ * vgg19
+ * efficientnetb3
+ * efficientnetb4
 
 ## 1.1 U-Net
 The following schematically structure of U-Net were used:
 
-![UNet](https://i.imgur.com/VqMixFA.png)
+![UNet](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/Unet.png?raw=true)
 
 <center> Figure 2. U-Net architecture </center>
-
+ 
 
 #### U-Net description:
-* Unet-like architecture with one of the following backbone:
-**1
-**2
+* Unet-like architecture with one of the backbones listed in **Backbones**:
 * Batch-normalization after every convolutional layer
 * Activation function: ReLU
 * Maxpooling 2×2
-* Dropout with rate 30%
-* 963201 total trainable parameters
-* 966145 total parameters
+* Dropout with rate 15%
+* > 29M total trainable parameters
+* > 29M total parameters
 
 
 #### Data augmentation description:
@@ -61,7 +75,9 @@ The following schematically structure of U-Net were used:
 * width shift range: 0.05 % in both directions
 * height shift range: 0.05 % in both directions
 * shear range: 50 degrees
-* zoom range: from 80% to 120%
+* zoom range: 30%
+* horizontal flipping
+* vertical flipping
 
 
 ## 1.2 Prediction obtained with U-Net + efficientnetb4 backbone
@@ -76,7 +92,10 @@ The following schematically structure of U-Net were used:
 
 
 #### Training details 
-In both models the optimization method is chosen to be Adam (learning rate = 0.01, β1= 0.9, β2= 0.99). Batch size equals 3. Number of iterations during training is selected as follows.Every 100 iterations, we evaluate accuracy on holdout set(10% of patches for each rock sample) and stop the training,when the target metric stabilizes. In this experiment, target metric stabilized when the number of epochs reached about 80–100.
+Due to the imbalance factor and specification of the task, it was decided to use combination of region-based and distribution-based losses like: Dice \eqref{Dice} and Focal \eqref{Focal} loss functions.   Dice loss directly optimize the Dice coefficient which is the most commonly used segmentation evaluation metric, while Focal loss adapts the standard Cross Entropy to deal with extreme foreground-background class imbalance, where the weights of well-classified examples are reduced. Class weights were also assigned into Dice loss. The total final loss is presented by:
+
+$$ \mathrm{TL} = \mathrm{DL} + (c \cdot  \mathrm{FL}) $$
+, where DL is Dice Loss, FL - Focal Loss, and c - constant value.
 
 ## Results
 
