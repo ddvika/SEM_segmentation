@@ -117,21 +117,21 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 ## Results
 ### IoU scores for Convolutional models:
 
-![128x128](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/128x128.png?raw=true)
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/128x128.png" width="500" >
 <center> Table 1. Results for low-resolution 128x128 images  </center>
 
-![256x256](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/256x256.png?raw=true)
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/256x256.png" width="500" >
 <center> Table 2. Results for low-resolution 256x256 images </center>
 
-![512x512](https://github.com/ddvika/SEM_segmentation/blob/master/imgs/512x512.png?raw=true)
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/512x512.png" width="500" >
 <center> Table 3. Results for high-resolution 512x512 images </center>
 
 
 ### Predictions obtained with U-Net + efficientnetb4 backbone
 
-<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg" width="500" >
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex2.jpg" width="800" >
 
-<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg" width="500" >
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex4.jpg" width="800" >
 
 <center> Figure 5. U-Net + efficientnetb4 backbone prediction for 5 classes case </center>
 
@@ -143,7 +143,7 @@ where η_min and η_max are ranges for the learning rate, T_cur accounts for how
 
 ### Predictions obtained with GAN
 
-<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex_gan.png" width="500" >
+<img src="https://github.com/ddvika/SEM_segmentation/blob/master/imgs/ex_gan.png" width="800" >
 
 <center> Figure 6. GAN prediction for 5 classes case </center>
 
