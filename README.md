@@ -1,5 +1,5 @@
 
-# 2D Multi-Mineral Segmentation of Rock SEM Images using Convolutional Neural Networks
+# 2D Multi-Mineral Segmentation of Rock SEM Images using Convolutional Neural Networks and Generative Adversarial Network
 
 > This repository contains machine learning models written for the final project of the Skoltech Machine Learning course
 
