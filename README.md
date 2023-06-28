@@ -10,6 +10,7 @@
 * Daniil Bragin
 * Emre Özdemir
 
+
 ## Brief description of the project
 Segmentation of images of rocks is a crucial step in almost any Digital Rock workflow. However, the QEMSCAN scanning method is a very time and money consuming approach. In this paper, we investigate an application of three popular Convolutional Neural Networks
 (CNN) architectures: U-Net, LinkNet, ResUNet. We also applied the pix2pix - conditional Generative Adversarial Network (cGAN) for the segmentation of 2D microtomographic rock images.
